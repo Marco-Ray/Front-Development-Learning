@@ -1,0 +1,197 @@
+<style>
+    #guide-div {
+        grid-area: guide;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(31, 31, 31);
+        position: fixed;
+        width: 100%;
+        height: 75px;
+    }
+
+    button {
+    border-radius: 5px;
+    color: white;
+    background-color: grey;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes background-color {
+    100% {
+      background-color: rgb(71, 66, 66);
+    }
+  }
+
+    body {
+        background-color: #64649e;
+        display: grid;
+        grid-template-rows:75px 1fr;
+        grid-template-areas:
+            "guide"
+            "main";
+        align-items: center;
+        margin: auto;
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 700px 1fr;
+        grid-template-rows:200px 1fr;
+        grid-template-areas:
+            "header header header"
+            ". form .";
+        align-items: center;
+        margin-top: -10px;
+    }
+
+    @media (max-width: 1000px) {
+        main {
+            grid-template-columns: 1fr minmax(300px, 500px) 1fr;
+        }
+    }
+
+
+    #header {
+        text-align: center;
+    }
+
+    form {
+        border-radius: 5px;
+        background-color: #282744;
+        color: white;
+        padding: 3% 5% 3% 5%;
+    }
+
+    p {
+        padding-bottom: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
+        padding-bottom: 10px;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+    }
+
+    #submit {
+        background-color: green;
+        color: white;
+        width: 100%;
+        height: 50px;
+    }
+
+    #submit:hover {
+        animation-name: s-background-color;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes s-background-color {
+    100% {
+      background-color: rgb(0, 223, 0);
+    }
+  }
+
+    select {
+        width: 100%;
+        height: 40px;
+    }
+
+</style>
+
+
+<head>
+    <title>CSS Practice--Survey Form</title>
+</head>
+<body>
+<main>
+    <div id="header" style="grid-area: header;">
+        <h1 id='title' style="color: white;">freeCodeCamp Survey Form</h1>
+        <p id="discription" style="color: white;">Thank you for taking the time to help us improve the platform</p>
+    </div>
+    <div style="grid-area: form;">
+        <form id="survey-form" >
+            <p>Name:
+                <br />
+                <label id="name-label" for="name"></label>
+                <input id="name" required type="text" placeholder="Enter your name" />
+            </p>
+            <P>Email
+                <br />
+                <label id="email-label" for="email"></label>
+                <input id="email" required type="text" placeholder="Enter your Email" pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" />
+            </P>
+            <p>Age(optional)
+                <br>
+                <label id="number-label" for='number'></label>
+                <input id="number" type="number" placeholder="Age" min="10" max="99" style="width: 100%;"/>
+            </p>
+            <p>Which option best describes your current role?
+                <br>
+                <select id="dropdown">
+                    <option selected disabled>Select current role</option>
+                    <option value="Student">Student</option>
+                    <option value="Full Time Job">Full Time Job</option>
+                    <option value="Fill Time Learner">Full Time Learner</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                    
+                    <option value="Other">Other</option>
+                </select>
+            </p>
+            <p>Would you recommend freeCodeCamp to a friend?
+                <br>
+                <label for="recommend">
+                    <input type="radio" name="recommend" checked />Definitely<br>
+                    <input type="radio" name="recommend" />Maybe<br>
+                    <input type="radio" name="recommend" />Not sure<br>
+                </label>
+            </p>
+            <p>What is your favorite feature of freeCodeCamp?
+                <br>
+                <label for="feature">
+                    <select>
+                        <option selected disabled>Select an option</option>
+                        <option value="Challenges">Challenges</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Community">Community</option>
+                        <option value="Open Source">Open Source</option>
+                    </select>
+                </label>
+            </p>
+            <p>What would you like to see improved?(Check all that apply)
+                <br>
+                <label for="features">
+                    <input type="checkbox" name="features" value="Front-end Projects"/>Front-end Projects<br />
+                    <input type="checkbox" name="features" value="Back-end Projects"/>Back-end Projects<br />
+                    <input type="checkbox" name="features" value="Data Visualization"/>Data Visualization<br />
+                    <input type="checkbox" name="features" value="Challenges"/>Challenges<br />
+                    <input type="checkbox" name="features" value="Open Source Community"/>Open Source Community<br />
+                    <input type="checkbox" name="features" value="Gitter help rooms"/>Gitter help rooms<br />
+                    <input type="checkbox" name="features" value="Videos"/>Videos<br />
+                    <input type="checkbox" name="features" value="City Meeetups"/>City Meetups<br />
+                    <input type="checkbox" name="features" value="Wili"/>Wiki<br />
+                    <input type="checkbox" name="features" value="Forum"/>Forum<br />
+                    <input type="checkbox" name="features" value="Additional Courses"/>Additional Courses<br />
+                </label>
+            </p>
+            <p>Any comments or suggestions?
+                <br>
+                <textarea placeholder="Enter your comment here..." style="width: 100%; height: 100px;"></textarea>
+            </p>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+        
+    </div>
+</main>
+</body>

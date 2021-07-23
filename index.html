@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 65.094px;
+        background-color: #be3144;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #navbar a {
+        display: block;
+        font-size: 20.46px;
+        padding: 18.56px;
+    }
+
+    #navbar li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #f0f0f0;
+    }
+
+    #welcome-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    #projects {
+        background-color: #45567d;
+        text-align: center;
+        margin: 0;
+        padding: 90px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+    }
+
+    .project-section-header {
+        color: #f0f0f0; 
+        font-size: 40px;
+        margin: 0px 293px 60px;
+        padding: 0;
+        border-bottom: solid;
+        border-color: #f0f0f0;
+        max-width: 640px;
+        width: 100%;
+    }
+
+    .projects-grid {
+        display: grid;
+        width: 100%;
+        max-width: 1280px;
+        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-items: center;
+        align-items: center;
+        grid-gap: 50px;
+        margin: 0px 0px 55px;
+    }
+
+    @media (max-width: 700px) {
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }    
+
+    .project-link {
+        width: 100%;
+        height: auto;
+        background-color: #303841;
+        box-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+        border-radius: 2px;
+        color: #f0f0f0;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-tile {
+        font-size: 18px;
+    }
+
+    .code {
+        color: #303841;
+    }
+
+    .project-link:hover .code{
+            animation-name: span-color;
+            animation-duration: 0.8s;
+            animation-fill-mode: forwards;
+    }
+
+    @keyframes span-color {
+        100% {
+            color: orangered;
+        }
+    }
+
+    #button-show-more {
+        display: block;
+        background-color: #303841;
+        position: relative;
+        bottom: 0;
+        align-self: center;
+        padding: 10px 20px;
+    }
+
+    #contact-section {
+        background-color: #303841;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #contact-links {
+        margin: 40px 0px 0px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .profile-link {
+        display: block;
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+
+    .profile-link:hover {
+        animation-name: drop;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    @keyframes drop {
+        100% {
+            transform: translateY(10px);
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        border-top: 4px solid #be3144;
+        background-color: #303841;
+        padding: 20px;
+    }
+
+</style>
+<html>
+    <body>
+        <nav id="navbar">
+            <li><a href="#welcome-section">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </nav>
+        <section id="welcome-section">
+            <h1 style="color: #f0f0f0; font-size: 60px;margin: 0;padding: 0;">Hey I am Ray</h1>
+            <p style="color: #be3144; font-size: 30px;margin: 0;padding: 0;">a clot web developer</p>
+        </section>
+        <section id="projects">
+            <h2 class="project-section-header">There are some of my projects</h2>
+            <div class="projects-grid">
+                <a href="../profiles/CSS Practice--Tribute Page New.html" class="project-link" target="_blank">
+                    <img src="https://gitee.com/Marco-Ray/for-pic-go/raw/master/img/20210714133809.png" class="project-image" alt="Tribute Page"/>
+                    <p class="project-tile"><span class="code"><</span> Tribute Page <span class="code">/></span></p>
+                </a>
+                <a href="../profiles/CSS Practice--Survey Form.html" class="project-link" target="_blank">
+                    <img src="https://gitee.com/Marco-Ray/for-pic-go/raw/master/img/20210714133646.png" class="project-image" alt="Survey Form Page"/>
+                    <p class="project-tile"><span class="code"><</span> Survey Form <span class="code">/></span></p>
+                </a>
+                <a href="../profiles/CSS Practice--Product Landing Page.html" class="project-link" target="_blank">
+                    <img src="https://gitee.com/Marco-Ray/for-pic-go/raw/master/img/20210714133723.png" class="project-image"/>
+                    <p class="project-tile"><span class="code"><</span> Product Landing Page <span class="code">/></span></p>
+                </a>
+                <a href="../profiles/CSS Practice--Technical Document Page.html" class="project-link" target="_blank">
+                    <img src="https://gitee.com/Marco-Ray/for-pic-go/raw/master/img/20210714133606.png" class="project-image"/>
+                    <p class="project-tile"><span class="code"><</span> Technical Document Page <span class="code">/></span></p>
+                </a>
+            </div>
+            <a id="button-show-more" href="">Show More ></a>
+        </section>
+        <section id="contact-section">
+            <h2 style="color: #f0f0f0; font-size: 50px;margin: 0;padding: 0;">Let's work together...</h2>
+            <p style="color: #f0f0f0; font-size: 20px;margin: 0;padding: 0;">Succint, Laconic, Consice</p>
+            <div id="contact-links">
+                <a href="https://github.com/Marco-Ray" class='profile-link' id="profile-link" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/zehuan-wang-58bb061a1" class='profile-link' target="_blank">LinkedIn</a>
+            </div>
+        </section>
+        <footer>
+            <p style="font-size: 22px;color: #f0f0f0;margin: 19px;">**This is just a fake portfolio. All the projects and contact details given are not real.</p>
+            <p style="font-size: 22px;color: #f0f0f0;margin: 19px;">Made by wzh</p>
+        </footer>
+    </body>
+</html>
